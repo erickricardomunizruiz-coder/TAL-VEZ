@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Peni - Inicio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">LA PENINSULA</div>
+    <div class="seccion-fecha">
+        <p class="etiqueta-dia">Noticia de día</p>
+        <div class="fecha-box">
+            <span id="fecha-actual"></span>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="noticia-principal">
+        <h1>Título de la Noticia del Día</h1>
+        <p class="contexto">
+            Aquí va el contexto y contenido principal sobre la noticia de hoy. Es el espacio para detallar lo más importante que está ocurriendo en este momento.
+        </p>
+    </section>
+
+    <section class="noticias-grid">
+
+        <a href="noticia-1.html" class="tarjeta-link">
+            <div class="tarjeta">
+                <span class="etiqueta">INTERNACIONAL</span>
+                <img src="noticia1.jpg" alt="Noticia 1" class="img-tarjeta">
+                <div class="info">Noticia secundaria 1</div>
+            </div>
+        </a>
+
+        <a href="noticia-2.html" class="tarjeta-link">
+            <div class="tarjeta">
+                <span class="etiqueta">NOTICIAS</span>
+                <img src="noticia2.jpg" alt="Noticia 2" class="img-tarjeta">
+                <div class="info">Noticia secundaria 2</div>
+            </div>
+        </a>
+
+        <a href="noticia-3.html" class="tarjeta-link">
+            <div class="tarjeta">
+                <span class="etiqueta">COMUNIDAD</span>
+                <img src="noticia3.jpg" alt="Noticia 3" class="img-tarjeta">
+                <div class="info">Noticia secundaria 3</div>
+            </div>
+        </a>
+
+    </section>
+</main>
+
+<footer>
+    <div class="contacto">
+        <h3>Contáctanos</h3>
+        <p>Email: contacto@lapeni.com</p>
+        <p>WhatsApp: +593 99 999 9999</p>
+    </div>
+    <div class="redes">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Facebook</a>
+    </div>
+</footer>
+
+<script>
+    // Script para el formato: sábado, 17/01/2026
+    const fecha = new Date();
+    const opcionesDia = { weekday: 'long' };
+    const diaSemana = fecha.toLocaleDateString('es-ES', opcionesDia);
+
+    const dia = String(fecha.getDate()).padStart(2, '0');
+    const mes = String(fecha.getMonth() + 1).padStart(2, '0');
+    const anio = fecha.getFullYear();
+
+    const fechaFormateada = `${diaSemana}, ${dia}/${mes}/${anio}`;
+    document.getElementById('fecha-actual').innerHTML = fechaFormateada;
+</script>
+</body>
+</html>
